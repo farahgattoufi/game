@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMPTEUR="../jeu/nb_erreurs.txt"
-NBMAX=2
+NBMAX=3
 
 # Initialiser ou incrémenter le compteur
 if [ ! -f "$COMPTEUR" ]; then
@@ -21,12 +21,12 @@ if [ $NBE -ge $NBMAX ]; then
     cd ..
     bash laboratoire/reset_labo.sh
     bash bibliotheque/reset_bib.sh
-    bash atelier/reset_atelier.sh
+    bash gallerie/reset_gallerie.sh
     bash grenier/reset_grenier.sh
     echo "Le jeu est intégralement remis à zéro. Tu dois recommencer !"
     exit 1
 else
-    RESTE=$((NBMAX-NBE))
+    RESTE=$((NBMAX-NBE-1))
     echo "Attention : ce n’est pas la bonne station."
     echo "Encore $RESTE essai(s) avant Game Over."
     exit 1

@@ -1,11 +1,15 @@
 #!/bin/bash
-LIMIT=1800
-while [ $LIMIT -ge 0 ]; do
-    echo "$((LIMIT/60)) min $((LIMIT%60)) sec restantes" > data/time.txt
+
+mkdir -p time
+LIMIT=$((30*60))               # 30 minutes en secondes
+DATA_FILE="time/time.txt"
+
+echo $LIMIT > "$DATA_FILE"
+
+while [ $LIMIT -gt 0 ]; do
     sleep 1
     LIMIT=$((LIMIT - 1))
+    echo $LIMIT > "$DATA_FILE"
 done
-echo -e "\n⏰ Temps écoulé ! Tu as perdu."
-echo "0 min 0 sec restantes" > data/time.txt
-pkill -P $PPID
-exit 1
+
+echo "Le temps est écoulé !" > "$DATA_FILE"

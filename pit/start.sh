@@ -7,7 +7,6 @@ done
 
 bash laboratoire/reset_labo.sh
 bash bibliotheque/reset_bib.sh
-bash atelier/reset_atelier.sh
 bash grenier/reset_grenier.sh
 rm -f ../jeu/nb_erreurs.txt
 
