@@ -18,10 +18,11 @@ if [ $NBE -ge $NBMAX ]; then
     echo "GAME OVER. Recommence depuis le début du jeu."
     rm -f "$COMPTEUR"
         # Appelle tous tes resets :
-    bash ../laboratoire/reset_labo.sh
-    bash ../bibliotheque/reset_bib.sh
-    bash ../atelier/reset_atelier.sh
-    bash ../grenier/reset_grenier.sh
+    cd ..
+    bash laboratoire/reset_labo.sh
+    bash bibliotheque/reset_bib.sh
+    bash atelier/reset_atelier.sh
+    bash grenier/reset_grenier.sh
     echo "Le jeu est intégralement remis à zéro. Tu dois recommencer !"
     exit 1
 else
