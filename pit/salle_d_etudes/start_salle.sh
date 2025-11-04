@@ -3,6 +3,9 @@
 COMPTEUR="../jeu/nb_erreurs.txt"
 NBMAX=3
 
+# Créer le dossier jeu si nécessaire
+mkdir -p ../jeu
+
 # Initialiser ou incrémenter le compteur
 if [ ! -f "$COMPTEUR" ]; then
     echo 1 > "$COMPTEUR"
@@ -15,9 +18,9 @@ fi
 
 if [ $NBE -ge $NBMAX ]; then
     echo "Erreur fatale : tu es entré trop souvent dans de mauvais endroits."
-    echo "GAME OVER. Recommence depuis le début du jeu."
+    echo "GAME OVER"
     rm -f "$COMPTEUR"
-        # Appelle tous tes resets :
+    # Appelle tous tes resets :
     cd ..
     bash laboratoire/reset_labo.sh
     bash bibliotheque/reset_bib.sh
@@ -26,7 +29,7 @@ if [ $NBE -ge $NBMAX ]; then
     echo "Le jeu est intégralement remis à zéro. Tu dois recommencer !"
     exit 1
 else
-    RESTE=$((NBMAX-NBE-1))
+    RESTE=$((NBMAX-NBE))
     echo "Attention : ce n’est pas la bonne station."
     echo "Encore $RESTE essai(s) avant Game Over."
     exit 1
