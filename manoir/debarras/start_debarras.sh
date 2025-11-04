@@ -1,10 +1,10 @@
 #!/bin/bash
 
-COMPTEUR="../jeu/nb_erreurs.txt"
+COMPTEUR="../../jeu/nb_erreurs.txt"
 NBMAX=3
 
 # Créer le dossier jeu si nécessaire
-mkdir -p ../jeu
+mkdir -p ../../jeu
 
 # Initialiser ou incrémenter le compteur
 if [ ! -f "$COMPTEUR" ]; then
@@ -27,6 +27,7 @@ if [ $NBE -ge $NBMAX ]; then
     bash gallerie/reset_gallerie.sh
     bash grenier/reset_grenier.sh
     echo "Le jeu est intégralement remis à zéro. Tu dois recommencer !"
+    
     exit 1
 else
     RESTE=$((NBMAX-NBE))

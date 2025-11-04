@@ -4,7 +4,7 @@ COMPTEUR="../../jeu/nb_erreurs.txt"
 NBMAX=3
 
 # Créer le dossier jeu si nécessaire
-mkdir -p ../jeu
+mkdir -p ../../jeu
 
 # Initialiser ou incrémenter le compteur
 if [ ! -f "$COMPTEUR" ]; then
