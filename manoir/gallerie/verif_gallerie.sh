@@ -1,17 +1,12 @@
 #!/bin/bash
-if [ -f tableau1.png ] && [ -f "cadenas/cle.txt" ]; then
+if [ ! -f tableau1.png ] && [ -f "cadenas/cle.txt" ]; then
     echo "Bravo, tu as trouvé la machine cachée derrière le tableau."
     read -p "Entre le code d’arrêt (1 seule chance) : " answer
     if [ "$answer" == "3517" ]; then
-        START=$(cat ../.timer_start)
-        NOW=$(date +%s)
-        ECoule=$((NOW - START))
-        MIN=$((ECoule / 60))
-        SEC=$((ECoule % 60))
-        rm -f ../.timer_start
         echo "Bravo ! La machine s'arrête."
         echo "Tu as gagné! : l’ordre du temps est restauré dans le manoir, et ton nom restera gravé dans la légende."
-        echo "Temps écoulé : $MIN minute(s) et $SEC seconde(s)."
+        bash ../time.sh
+        
         
 
 
