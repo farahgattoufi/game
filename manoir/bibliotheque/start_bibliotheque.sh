@@ -13,3 +13,4 @@ echo "- Modifie le texte après déchiffrement dans ton coffre"
 echo
 echo "Pour déchiffrer le texte souviens-toi que parfois, il suffit de regarder les choses dans le sens opposé pour voir apparaître la vérité."
 echo "Bonne chasse aux savoirs !"
+echo
